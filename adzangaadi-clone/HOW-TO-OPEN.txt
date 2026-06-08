@@ -1,0 +1,32 @@
+WHY double-clicking index.html in this folder does NOT work
+============================================================
+This is a React + Vite project. The index.html here is only a template.
+The browser cannot run React code directly from a file click.
+
+HOW TO OPEN THE WEBSITE (choose one)
+====================================
+
+OPTION 1 - EASIEST (double-click)
+---------------------------------
+Double-click:  OPEN-WEBSITE.bat
+Your browser will open automatically at http://localhost:4173
+
+OPTION 2 - Development mode
+---------------------------
+1. Open Command Prompt in this folder
+2. Run: npm install   (first time only)
+3. Run: npm run dev
+4. Open: http://localhost:5173
+
+OPTION 3 - Built static files
+-----------------------------
+After running: npm run build
+Open the folder: dist\
+Use OPEN-WEBSITE.bat (recommended) OR double-click dist\index.html
+(Some browsers may block file:// — use the .bat file if blank page)
+
+READY-TO-SHARE COPY
+===================
+Folder: website-ready\
+Contains a full built copy you can copy to USB or another PC.
+Run OPEN-WEBSITE.bat inside that folder.

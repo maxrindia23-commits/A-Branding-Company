@@ -1,0 +1,18 @@
+ADZANGAADI WEBSITE - READY TO OPEN
+==================================
+
+DO NOT double-click index.html (it may show a blank page).
+
+INSTEAD:
+  Double-click:  OPEN-WEBSITE.bat
+
+Your browser will open the full website at http://127.0.0.1:8080
+
+Requirements:
+  - Node.js installed (https://nodejs.org)
+  - Internet connection (for images loaded from adzangaadi.com)
+
+Files in this folder:
+  index.html     - main page (use with OPEN-WEBSITE.bat)
+  assets/        - styles and scripts
+  OPEN-WEBSITE.bat - START HERE
