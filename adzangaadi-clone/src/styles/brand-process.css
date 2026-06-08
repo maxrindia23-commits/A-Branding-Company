@@ -134,8 +134,8 @@
     rgba(255, 255, 255, 0.04) 38%,
     rgba(5, 11, 20, 0.82) 100%
   );
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   box-shadow:
     0 4px 28px rgba(0, 0, 0, 0.32),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);

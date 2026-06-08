@@ -203,8 +203,8 @@ select {
     rgba(90, 175, 220, 0.28) 65%,
     rgba(64, 187, 216, 0.35) 100%
   );
-  backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
+  backdrop-filter: blur(22px) saturate(180%);
   box-shadow:
     0 0 32px rgba(64, 187, 216, 0.38),
     0 0 64px rgba(64, 187, 216, 0.18),
@@ -356,8 +356,8 @@ select {
     rgba(120, 200, 235, 0.45) 0%,
     rgba(64, 187, 216, 0.35) 100%
   );
-  backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
   box-shadow: 0 0 40px rgba(64, 187, 216, 0.35);
 }
 
@@ -562,8 +562,8 @@ select {
   border-radius: 999px;
   border: 1px solid rgba(64, 187, 216, 0.5);
   background: linear-gradient(135deg, rgba(35, 103, 164, 0.35) 0%, rgba(64, 187, 216, 0.15) 100%);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   font-family: var(--font-body);
   font-size: clamp(0.6875rem, 1.2vw, 0.75rem);
   font-weight: 600;
@@ -1267,8 +1267,8 @@ button.section-cta {
   border-radius: 999px;
   border: 1px solid rgba(64, 187, 216, 0.35);
   background: rgba(35, 103, 164, 0.12);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   font-family: var(--font-body);
   font-size: clamp(0.625rem, 1.2vw, 0.6875rem);
   font-weight: 600;
@@ -1312,8 +1312,8 @@ button.section-cta {
   border-radius: 1rem;
   border: 1px solid rgba(64, 187, 216, 0.18);
   background: rgba(7, 17, 32, 0.55);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   transition:
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.4s ease,
@@ -1522,8 +1522,8 @@ button.section-cta {
     inset 0 0 50px rgba(64, 187, 216, 0.12),
     inset 0 -30px 50px rgba(35, 103, 164, 0.15),
     0 0 80px rgba(64, 187, 216, 0.2);
-  backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   pointer-events: none;
 }
 
@@ -1789,8 +1789,8 @@ button.section-cta {
   border-radius: 999px;
   border: 1px solid rgba(64, 187, 216, 0.35);
   background: rgba(35, 103, 164, 0.12);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   font-size: clamp(0.625rem, 1.2vw, 0.6875rem);
   font-weight: 600;
   letter-spacing: 0.32em;
@@ -2094,8 +2094,8 @@ button.section-cta {
     rgba(255, 255, 255, 0.03) 35%,
     rgba(5, 11, 20, 0.85) 100%
   );
-  backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
   box-shadow:
     0 4px 24px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
