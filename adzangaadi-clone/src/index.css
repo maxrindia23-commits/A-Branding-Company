@@ -317,7 +317,7 @@ select {
 
 .nav-pill-menu-btn {
   flex-shrink: 0;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 42px;
@@ -421,6 +421,10 @@ select {
 
   .nav-pill-links {
     display: none;
+  }
+
+  .nav-pill-menu-btn {
+    display: flex;
   }
 }
 
