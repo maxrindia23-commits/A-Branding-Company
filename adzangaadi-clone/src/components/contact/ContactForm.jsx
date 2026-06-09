@@ -30,12 +30,12 @@ export function ContactForm() {
           className="contact-form"
           action="https://formsubmit.co/hello@abrandingcompany.in"
           method="POST"
-          noValidate
         >
-          <input type="hidden" name="_subject" value="New Lead from ABC Website" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_next" value="https://a-branding-company-ra9r.vercel.app/thank-you" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New Lead from ABC Website" />
+          <input type="hidden" name="_template" value="table" />
+
           <div className="contact-form-row">
             <label className="contact-form-field">
               <span className="contact-form-label">Full Name *</span>
