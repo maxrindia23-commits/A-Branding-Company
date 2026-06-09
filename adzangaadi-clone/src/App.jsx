@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { ScrollToTop } from './components/layout/ScrollToTop';
 import { HeroSection } from './components/sections/HeroSection';
@@ -10,10 +11,10 @@ import { Services } from './components/sections/Services';
 import { Values } from './components/sections/Values';
 import { Contact } from './components/sections/Contact';
 import { useLenis } from './hooks/useLenis';
+import ThankYou from './pages/ThankYou';
 
-export default function App() {
+function HomePage() {
   useLenis();
-
   return (
     <div className="min-h-screen bg-adz-bg text-adz-white">
       <Navbar />
@@ -30,5 +31,16 @@ export default function App() {
       </main>
       <ScrollToTop />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/thank-you" element={<ThankYou />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

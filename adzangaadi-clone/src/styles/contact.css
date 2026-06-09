@@ -337,6 +337,54 @@
   color: rgba(255, 255, 255, 0.32);
 }
 
+/* ── Autofill override: prevent browser from painting a white background ── */
+.contact-form-input-wrap input:-webkit-autofill,
+.contact-form-input-wrap input:-webkit-autofill:hover,
+.contact-form-input-wrap input:-webkit-autofill:focus,
+.contact-form-input-wrap input:-webkit-autofill:active,
+.contact-form-input-wrap select:-webkit-autofill,
+.contact-form-input-wrap select:-webkit-autofill:hover,
+.contact-form-input-wrap select:-webkit-autofill:focus,
+.contact-form-input-wrap select:-webkit-autofill:active,
+.contact-form-input-wrap textarea:-webkit-autofill,
+.contact-form-input-wrap textarea:-webkit-autofill:hover,
+.contact-form-input-wrap textarea:-webkit-autofill:focus,
+.contact-form-input-wrap textarea:-webkit-autofill:active {
+  /* Large inset shadow paints over the browser-injected autofill bg */
+  -webkit-box-shadow: 0 0 0 1000px rgba(4, 10, 18, 0.65) inset !important;
+  box-shadow: 0 0 0 1000px rgba(4, 10, 18, 0.65) inset !important;
+  /* Keep text white — browsers ignore color: on autofilled inputs */
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
+  /* Retain a smooth transition when browser swaps state */
+  transition: background-color 9999s ease-in-out 0s,
+              -webkit-box-shadow 9999s ease-in-out 0s;
+}
+
+/* Focus state on autofilled input: apply the focused-wrap shadow directly on the input */
+.contact-form-input-wrap input:-webkit-autofill:focus,
+.contact-form-input-wrap select:-webkit-autofill:focus,
+.contact-form-input-wrap textarea:-webkit-autofill:focus {
+  -webkit-box-shadow:
+    0 0 0 1000px rgba(6, 14, 24, 0.85) inset,
+    0 0 0 3px rgba(64, 187, 216, 0.12),
+    0 0 24px rgba(64, 187, 216, 0.14) !important;
+  box-shadow:
+    0 0 0 1000px rgba(6, 14, 24, 0.85) inset,
+    0 0 0 3px rgba(64, 187, 216, 0.12),
+    0 0 24px rgba(64, 187, 216, 0.14) !important;
+}
+
+/* Ensure typed / filled (non-autofill) values stay white and background stays dark */
+.contact-form-input-wrap input,
+.contact-form-input-wrap select,
+.contact-form-input-wrap textarea {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+  caret-color: #ffffff;
+  background-color: transparent !important;
+}
+
 .contact-form-input-wrap input,
 .contact-form-input-wrap select {
   height: 3.25rem;
