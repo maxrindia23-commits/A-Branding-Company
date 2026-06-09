@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FadeIn } from '../ui/FadeIn';
 
@@ -16,6 +17,32 @@ function FieldIcon({ children }) {
 }
 
 export function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/hello@abrandingcompany.in', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        window.location.href = '/thank-you';
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <FadeIn direction="right" amount={0.2} className="contact-form-col">
       <motion.div
@@ -26,12 +53,8 @@ export function ContactForm() {
         transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="contact-form-card-glow" aria-hidden />
-        <form
-          className="contact-form"
-          action="https://formsubmit.co/hello@abrandingcompany.in"
-          method="POST"
-        >
-          <input type="hidden" name="_next" value="https://a-branding-company-ra9r.vercel.app/thank-you" />
+
+        <form className="contact-form" onSubmit={handleSubmit}>
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_subject" value="New Lead from ABC Website" />
           <input type="hidden" name="_template" value="table" />
@@ -49,6 +72,7 @@ export function ContactForm() {
                 <input type="text" name="fullName" required placeholder="Your Name" autoComplete="name" />
               </span>
             </label>
+
             <label className="contact-form-field">
               <span className="contact-form-label">Email Address *</span>
               <span className="contact-form-input-wrap">
@@ -65,7 +89,7 @@ export function ContactForm() {
 
           <div className="contact-form-row">
             <label className="contact-form-field">
-              <span className="contact-form-label">Phone Number</span>
+              <span className="contact-form-label">Phone Number *</span>
               <span className="contact-form-input-wrap">
                 <FieldIcon>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
@@ -75,9 +99,10 @@ export function ContactForm() {
                     />
                   </svg>
                 </FieldIcon>
-                <input type="tel" name="phone" placeholder="+91 98765 43210" autoComplete="tel" />
+                <input type="tel" name="phone" required placeholder="+91 98765 43210" autoComplete="tel" />
               </span>
             </label>
+
             <label className="contact-form-field">
               <span className="contact-form-label">Company / Brand Name</span>
               <span className="contact-form-input-wrap">
@@ -100,6 +125,7 @@ export function ContactForm() {
                   <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h10" />
                 </svg>
               </FieldIcon>
+
               <select name="service" defaultValue="">
                 <option value="" disabled>
                   Select a service
@@ -110,6 +136,7 @@ export function ContactForm() {
                   </option>
                 ))}
               </select>
+
               <span className="contact-form-chevron" aria-hidden>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" d="M6 9l6 6 6-6" />
@@ -119,19 +146,18 @@ export function ContactForm() {
           </label>
 
           <label className="contact-form-field contact-form-field--full">
-            <span className="contact-form-label">Tell Us About Your Project *</span>
+            <span className="contact-form-label">Tell Us About Your Project</span>
             <span className="contact-form-input-wrap contact-form-input-wrap--textarea">
               <textarea
                 name="message"
-                required
                 rows={5}
                 placeholder="Share your goals, timeline, and what success looks like for your brand..."
               />
             </span>
           </label>
 
-          <button type="submit" className="contact-submit-btn contact-form-submit">
-            Let&apos;s Grow Together
+          <button type="submit" className="contact-submit-btn contact-form-submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : "Let's Grow Together"}
           </button>
         </form>
       </motion.div>
